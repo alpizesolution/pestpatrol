@@ -4,7 +4,7 @@ export interface QuotePayload {
   fullName: string;
   phone: string;
   email?: string;
-  propertyType: "residential" | "commercial" | "industrial";
+  propertyType: "residential" | "commercial" | "industrial" | "preconstruction";
   pestProblem: string;
   barangayAddress: string;
   urgency?: "emergency" | "this-week" | "planning";
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       errors.phone = "Please enter a valid PH mobile number (e.g. 0916 304 1351).";
     }
 
-    if (!body.propertyType || !["residential", "commercial", "industrial"].includes(body.propertyType)) {
+    if (!body.propertyType || !["residential", "commercial", "industrial", "preconstruction"].includes(body.propertyType)) {
       errors.propertyType = "Please select a valid property type.";
     }
 

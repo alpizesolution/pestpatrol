@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Shield,
   ArrowRight,
+  Factory,
 } from "lucide-react";
 import { CDO_SERVICES, ServiceItem } from "@/data/services";
 
@@ -25,6 +26,8 @@ export default function Services({ onSelectService }: ServicesProps) {
         return <Rat className="w-7 h-7 text-red-600" />;
       case "Sparkles":
         return <Sparkles className="w-7 h-7 text-red-600" />;
+      case "Factory":
+        return <Factory className="w-7 h-7 text-red-600" />;
       default:
         return <Shield className="w-7 h-7 text-red-600" />;
     }
@@ -42,12 +45,12 @@ export default function Services({ onSelectService }: ServicesProps) {
             Specialized Pest & Termite Services in CDO
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Tailored specifically for the coastal and upland climates of Northern Mindanao. Every treatment complies with FDA safety standards and is backed by a written service warranty.
+            Engineered specifically for the tropical coastal and upland climates of Northern Mindanao. Every treatment complies with FDA safety standards and is backed by written warranty coverage.
           </p>
         </div>
 
-        {/* 4-Card Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* 5-Card Responsive Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {CDO_SERVICES.map((service) => (
             <div
               key={service.id}

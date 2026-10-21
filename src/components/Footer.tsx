@@ -35,8 +35,8 @@ export default function Footer() {
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 font-medium">
-              🔰 Serving the Whole of CDO and Northern Mindanao 🔰
+            <p className="text-xs sm:text-sm text-slate-200 font-semibold">
+              🔰 Serving the Whole of Cagayan de Oro (CDO) and Northern Mindanao
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
               We service Homes, Commercial Establishments, Factories & Warehouses, and Pre-Construction Soil Poisoning. Safe & effective control for Cockroaches, Termites, Rodents, Ants, and Mosquitoes.

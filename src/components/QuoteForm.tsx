@@ -11,6 +11,7 @@ import {
   Building,
   Home,
   Factory,
+  HardHat,
   Clock,
   Sparkles,
 } from "lucide-react";
@@ -24,8 +25,8 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [propertyType, setPropertyType] = useState<"residential" | "commercial" | "industrial">("residential");
-  const [pestProblem, setPestProblem] = useState(initialPestProblem || "Termite (Anay) Soil / Wood Treatment");
+  const [propertyType, setPropertyType] = useState<string>("residential");
+  const [pestProblem, setPestProblem] = useState(initialPestProblem || "Termites / Pre-Construction Soil Poisoning");
   const [barangayAddress, setBarangayAddress] = useState("");
   const [urgency, setUrgency] = useState<"emergency" | "this-week" | "planning">("this-week");
   const [notes, setNotes] = useState("");
@@ -33,6 +34,12 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successData, setSuccessData] = useState<{ message: string; inquiryId?: string } | null>(null);
+
+  React.useEffect(() => {
+    if (initialPestProblem) {
+      setPestProblem(initialPestProblem);
+    }
+  }, [initialPestProblem]);
 
   // Client-side quick validation
   const validate = () => {
@@ -254,11 +261,12 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                     <label className="block text-xs font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Property Type <span className="text-red-500">*</span>
                     </label>
-                    <div className="grid grid-cols-3 gap-2.5">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                       {[
-                        { id: "residential", label: "Residential", icon: Home },
-                        { id: "commercial", label: "Commercial", icon: Building },
-                        { id: "industrial", label: "Industrial", icon: Factory },
+                        { id: "residential", label: "Residential (Homes / Apts)", icon: Home },
+                        { id: "commercial", label: "Commercial Establishments", icon: Building },
+                        { id: "industrial", label: "Factories & Warehouses", icon: Factory },
+                        { id: "preconstruction", label: "Pre-Construction Site", icon: HardHat },
                       ].map((item) => {
                         const Icon = item.icon;
                         const isSelected = propertyType === item.id;
@@ -266,7 +274,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                           <button
                             type="button"
                             key={item.id}
-                            onClick={() => setPropertyType(item.id as any)}
+                            onClick={() => setPropertyType(item.id)}
                             className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${
                               isSelected
                                 ? "border-red-600 bg-red-50 text-neutral-950 font-bold ring-2 ring-red-500/20"
@@ -274,7 +282,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                             }`}
                           >
                             <Icon className={`w-5 h-5 mb-1 ${isSelected ? "text-red-600" : "text-slate-400"}`} />
-                            <span className="text-xs">{item.label}</span>
+                            <span className="text-xs leading-tight">{item.label}</span>
                           </button>
                         );
                       })}
@@ -340,13 +348,12 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                         onChange={(e) => setPestProblem(e.target.value)}
                         className="w-full px-4 py-2.5 rounded-xl text-sm border border-slate-200 bg-white text-neutral-900 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                       >
-                        <option value="Termite (Anay) Soil / Wood Treatment">Subterranean Termites (Anay)</option>
-                        <option value="Cockroach (Ipis) Gel Baiting & Spray">German / American Cockroaches (Ipis)</option>
-                        <option value="Rodent (Daga) Baits & Trapping">Rats & Mice (Daga / Rodents)</option>
-                        <option value="Mosquito Dengue Misting / Fogging">Mosquito Misting / Dengue Prevention</option>
-                        <option value="Bedbug (Surot) Heat & Chemical Treatment">Bedbugs (Surot)</option>
-                        <option value="Comprehensive General Pest Maintenance">General Multi-Pest Treatment</option>
-                        <option value="Pre-Construction Soil Poisoning">Pre-Construction Soil Poisoning</option>
+                        <option value="Termites / Pre-Construction Soil Poisoning">Termites / Pre-Construction Soil Poisoning</option>
+                        <option value="Cockroaches">Cockroaches</option>
+                        <option value="Rodents / Rats">Rodents / Rats</option>
+                        <option value="Ants">Ants</option>
+                        <option value="Mosquitoes">Mosquitoes</option>
+                        <option value="Full Property Treatment">Full Property Treatment</option>
                       </select>
                     </div>
 

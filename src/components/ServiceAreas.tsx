@@ -21,13 +21,13 @@ export default function ServiceAreas() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider mb-3">
             <MapPin className="w-3.5 h-3.5 text-red-600" />
-            Cagayan de Oro Coverage
+            Serving the Whole of CDO & Northern Mindanao
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
-            Prompt On-Site Service Throughout Northern Mindanao
+            Comprehensive Service Across Cagayan de Oro & Beyond
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Our certified field technicians are stationed strategically across CDO to provide rapid same-day inspection and emergency treatment dispatches.
+            Our certified field technicians provide prompt on-site inspections, preventive chemical barriers, and emergency dispatches for homes, commercial establishments, and industrial plants throughout CDO and Northern Mindanao.
           </p>
         </div>
 

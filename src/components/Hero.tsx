@@ -5,18 +5,44 @@ import {
   CalendarCheck,
   CheckCircle,
   Award,
-  Sparkles,
-  MapPin,
-  Clock,
   ArrowRight,
-  Home,
-  Building,
-  Factory,
-  Check,
+  Shield,
+  Leaf,
+  Sliders,
+  Lock,
+  Zap,
 } from "lucide-react";
 import { CDO_CONTACT } from "@/data/services";
 
 export default function Hero() {
+  const valuePoints = [
+    {
+      icon: Shield,
+      title: "Certified Technicians",
+      desc: "Safe, effective treatments",
+    },
+    {
+      icon: Leaf,
+      title: "Eco-Friendly",
+      desc: "Family, pet & planet safe",
+    },
+    {
+      icon: Sliders,
+      title: "Tailored Plans",
+      desc: "Custom solutions for your needs",
+    },
+    {
+      icon: Lock,
+      title: "Long-Term Protection",
+      desc: "Stops pests from returning",
+    },
+    {
+      icon: Zap,
+      title: "Fast & Reliable",
+      desc: "Quick response & clear updates",
+    },
+  ];
+
   return (
     <section className="relative bg-slate-50 py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200 overflow-hidden">
       {/* Faint subtle dot-grid background for light theme */}
@@ -29,26 +55,27 @@ export default function Hero() {
             {/* Regional Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-bold shadow-sm">
               <span className="text-base leading-none">🔰</span>
-              <span>Serving the Whole of CDO and Northern Mindanao</span>
+              <span>Serving the Whole of Cagayan de Oro (CDO) & Northern Mindanao</span>
               <span className="text-base leading-none">🔰</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-neutral-950">
-              Fast, Reliable <span className="text-red-600">Pest & Termite</span> Control in Cagayan de Oro
+              Protect Your Home or Business with a{" "}
+              <span className="text-red-600">Team You Can Trust.</span>
             </h1>
 
-            {/* Subheading with Target Coverage */}
+            {/* Sub-headline */}
             <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Specialized pest eradication and termite management for{" "}
-              <strong className="text-neutral-900 font-semibold">Homes, Commercial Establishments, Factories, Warehouses,</strong> and{" "}
-              <strong className="text-neutral-900 font-semibold">Pre-Construction Soil Poisoning</strong>.
+              Professional, eco-friendly pest and termite control serving the whole of Cagayan de Oro and Northern Mindanao.
             </p>
 
-            {/* Pests list highlight badge */}
-            <div className="inline-block bg-white border border-slate-200 rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold text-neutral-800 shadow-sm">
-              <span className="text-red-600 font-bold mr-1.5">🦟 Targeted Pests:</span>
-              Cockroaches • Termites • Rodents • Ants • Mosquitoes
+            {/* Sectors & Target Pests pill */}
+            <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-semibold text-neutral-800">
+              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 shadow-sm">🏠 Homes</span>
+              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 shadow-sm">🏢 Commercial</span>
+              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 shadow-sm">🏭 Factories & Warehouses</span>
+              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 shadow-sm">🏗️ Pre-Construction</span>
             </div>
 
             {/* Primary Action Buttons */}
@@ -58,7 +85,7 @@ export default function Hero() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:shadow-red-600/30 transition-all transform hover:-translate-y-0.5"
               >
                 <CalendarCheck className="w-5 h-5 text-white" />
-                <span>Request Free Inspection</span>
+                <span>Schedule Free Inspection</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>
 
@@ -67,28 +94,26 @@ export default function Hero() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-neutral-950 bg-white hover:bg-neutral-900 hover:text-white border-2 border-neutral-900 transition-all shadow-sm"
               >
                 <PhoneCall className="w-5 h-5 text-red-600 animate-bounce" />
-                <span>Call {CDO_CONTACT.phonePrimary}</span>
+                <span>Call {CDO_CONTACT.phoneDisplay}</span>
               </a>
             </div>
 
-            {/* 4 Core Value Props from user */}
-            <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs sm:text-sm text-neutral-800 border-t border-slate-200">
-              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
-                <Check className="w-4 h-4 text-red-600 flex-shrink-0 stroke-[3]" />
-                <span className="font-bold text-neutral-900">Safe & Effective</span>
-              </div>
-              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
-                <Check className="w-4 h-4 text-red-600 flex-shrink-0 stroke-[3]" />
-                <span className="font-bold text-neutral-900">Affordable Rates</span>
-              </div>
-              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
-                <Check className="w-4 h-4 text-red-600 flex-shrink-0 stroke-[3]" />
-                <span className="font-bold text-neutral-900">Fast Response</span>
-              </div>
-              <div className="flex items-center gap-1.5 justify-center lg:justify-start">
-                <Check className="w-4 h-4 text-red-600 flex-shrink-0 stroke-[3]" />
-                <span className="font-bold text-neutral-900">Proven Results</span>
-              </div>
+            {/* 5 Key Value Points Row */}
+            <div className="pt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-left border-t border-slate-200">
+              {valuePoints.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-neutral-950">
+                      <Icon className="w-4 h-4 text-red-600 flex-shrink-0" />
+                      <span>{item.title}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-500 leading-tight">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -101,7 +126,7 @@ export default function Hero() {
                     Trusted CDO Exterminators
                   </span>
                   <h2 className="text-xl font-bold text-neutral-950 mt-1">
-                    We Service Across CDO:
+                    Client Sectors We Service:
                   </h2>
                 </div>
                 <div className="h-12 w-12 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-600">
@@ -109,78 +134,42 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Scope of service items */}
+              {/* Sectors list */}
               <div className="py-4 space-y-3.5">
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 p-2 rounded-xl bg-red-50 border border-red-100 text-lg flex items-center justify-center w-10 h-10 flex-shrink-0">
-                    🏠
+                {CDO_CONTACT.clientSectors.map((sector, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-0.5 p-2 rounded-xl bg-red-50 border border-red-100 text-lg flex items-center justify-center w-10 h-10 flex-shrink-0">
+                      {sector.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-neutral-900">
+                        {sector.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {sector.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-neutral-900">
-                      Homes & Residential Subdivisions
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      Pueblo de Oro, Xavier Estates, Gran Europa, and all CDO barangays.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 p-2 rounded-xl bg-red-50 border border-red-100 text-lg flex items-center justify-center w-10 h-10 flex-shrink-0">
-                    🏢
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-neutral-900">
-                      Commercial Establishments
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      Restaurants, cloud kitchens, shopping malls, food chains, and corporate offices.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 p-2 rounded-xl bg-red-50 border border-red-100 text-lg flex items-center justify-center w-10 h-10 flex-shrink-0">
-                    🏭
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-neutral-900">
-                      Factories & Warehouses
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      Industrial storage facilities, manufacturing lines in Bugo, Puerto & PHIVIDEC.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 p-2 rounded-xl bg-red-50 border border-red-100 text-lg flex items-center justify-center w-10 h-10 flex-shrink-0">
-                    🏗️
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-neutral-900">
-                      Pre-Construction Soil Poisoning
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      Preventive soil chemical barrier for new building foundations and home renovations.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Call / Messenger Action Box */}
+              {/* Pests handled */}
+              <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 text-xs text-neutral-800">
+                <span className="font-bold text-red-600">🦟 Targets: </span>
+                <span>Cockroaches • Termites • Rodents • Ants • Mosquitoes</span>
+              </div>
+
+              {/* Call / Action Box */}
               <div className="pt-4 border-t border-slate-100 space-y-2">
                 <a
-                  href={CDO_CONTACT.messengerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-neutral-950 hover:bg-neutral-900 transition-colors shadow-sm"
+                  href="#quote"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm transition-colors"
                 >
-                  <span>Send us a message to schedule your free inspection</span>
-                  <ArrowRight className="w-4 h-4 text-red-400" />
+                  <span>Schedule Free Inspection & Quotation</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </a>
                 <p className="text-center text-[11px] text-slate-500">
-                  Hotlines: <strong className="text-neutral-800">{CDO_CONTACT.phonePrimary}</strong> or <strong className="text-neutral-800">{CDO_CONTACT.phoneSecondary}</strong>
+                  Direct Hotline: <a href={CDO_CONTACT.phoneTel} className="font-bold text-neutral-900 hover:text-red-600">{CDO_CONTACT.phoneDisplay}</a>
                 </p>
               </div>
             </div>

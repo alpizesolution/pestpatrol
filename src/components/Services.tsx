@@ -1,35 +1,18 @@
+"use client";
+
 import React from "react";
-import {
-  ShieldAlert,
-  Bug,
-  Rat,
-  Sparkles,
-  CheckCircle2,
-  Shield,
-  ArrowRight,
-  Factory,
-} from "lucide-react";
-import { CDO_SERVICES, ServiceItem } from "@/data/services";
+import Image from "next/image";
+import { servicesData, ServiceItem } from "@/data/services";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 interface ServicesProps {
-  onSelectService?: (serviceName: string) => void;
+  onSelectService?: (serviceTitle: string) => void;
 }
 
 export default function Services({ onSelectService }: ServicesProps) {
-  const getIcon = (iconName: ServiceItem["iconName"]) => {
-    switch (iconName) {
-      case "ShieldAlert":
-        return <ShieldAlert className="w-7 h-7 text-red-600" />;
-      case "Bug":
-        return <Bug className="w-7 h-7 text-red-600" />;
-      case "Rat":
-        return <Rat className="w-7 h-7 text-red-600" />;
-      case "Sparkles":
-        return <Sparkles className="w-7 h-7 text-red-600" />;
-      case "Factory":
-        return <Factory className="w-7 h-7 text-red-600" />;
-      default:
-        return <Shield className="w-7 h-7 text-red-600" />;
+  const handleInquire = (serviceTitle: string) => {
+    if (onSelectService) {
+      onSelectService(serviceTitle);
     }
   };
 
@@ -37,105 +20,74 @@ export default function Services({ onSelectService }: ServicesProps) {
     <section id="services" className="py-20 bg-slate-50 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider mb-3">
-            Targeted Treatments
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
-            Specialized Pest & Termite Services in CDO
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="text-xs font-bold uppercase tracking-widest text-red-600 bg-red-50 border border-red-200 px-3.5 py-1 rounded-full">
+            Guaranteed Protection
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight mt-3">
+            Our Pest Management Services
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Engineered specifically for the tropical coastal and upland climates of Northern Mindanao. Every treatment complies with FDA safety standards and is backed by written warranty coverage.
+          <p className="mt-2 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Proven, eco-friendly eradication across Cagayan de Oro and Northern Mindanao.
           </p>
         </div>
 
-        {/* 5-Card Responsive Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CDO_SERVICES.map((service) => (
+        {/* 5-Card Responsive Grid with 16:9 Image Headers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {servicesData.map((service: ServiceItem) => (
             <div
               key={service.id}
-              className={`bg-white rounded-2xl border transition-all duration-200 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 ${
-                service.popular
-                  ? "border-red-500 ring-2 ring-red-500/20"
-                  : "border-slate-200 hover:border-red-300"
-              }`}
+              className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/40 transition duration-300 flex flex-col transform hover:-translate-y-1"
             >
-              {/* Card Header & Badge */}
-              <div className="p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="p-3 rounded-xl bg-red-50 border border-red-100">
-                    {getIcon(service.iconName)}
-                  </div>
-                  <div className="flex flex-col items-end gap-1">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-200">
-                      {service.badge}
-                    </span>
-                    <span className="text-xs font-semibold text-red-600 flex items-center gap-1">
-                      <Shield className="w-3.5 h-3.5" />
-                      {service.warranty}
-                    </span>
-                  </div>
+              {/* Rectangular Image Container (16:9 ratio) */}
+              <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={`${service.title} in Cagayan de Oro - Pest Patrol CDO`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 text-xs font-bold px-2.5 py-1 bg-black/80 backdrop-blur-md text-white rounded-md border border-white/10 shadow-sm">
+                  {service.badge}
+                </span>
+              </div>
+
+              {/* Content Area */}
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-neutral-950 group-hover:text-red-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-slate-600 text-sm leading-relaxed">
+                    {service.summary}
+                  </p>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-neutral-950 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* Target Pests */}
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                    Target Species
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.targetPests.map((pest) => (
-                      <span
-                        key={pest}
-                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
+                {/* Compact Highlight Tags */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <ul className="space-y-2 mb-4">
+                    {service.highlights.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-xs font-semibold text-slate-700"
                       >
-                        {pest}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Treatment Checklist */}
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                    Treatment Protocol
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.treatmentSteps.map((step, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
-                        <span>{step}</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                {/* Recommended For */}
-                <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200 text-xs text-slate-600">
-                  <span className="font-semibold text-neutral-900">Recommended for: </span>
-                  {service.recommendedFor}
+                  <a
+                    href="#quote"
+                    onClick={() => handleInquire(service.title)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-red-600 transition-colors"
+                  >
+                    <span>Inquire about this service</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </a>
                 </div>
-              </div>
-
-              {/* Action Footer */}
-              <div className="px-6 py-4 sm:px-8 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs text-slate-500 font-medium">
-                  Free Initial Site Assessment
-                </span>
-                <a
-                  href="#quote"
-                  onClick={() => onSelectService && onSelectService(service.title)}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-red-600 hover:text-red-700 group"
-                >
-                  <span>Book Free Inspection</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
               </div>
             </div>
           ))}

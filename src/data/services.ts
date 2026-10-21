@@ -1,132 +1,57 @@
 export interface ServiceItem {
   id: string;
   title: string;
-  shortDesc: string;
   badge: string;
-  popular?: boolean;
-  warranty: string;
-  description: string;
-  targetPests: string[];
-  treatmentSteps: string[];
-  recommendedFor: string;
-  iconName: "ShieldAlert" | "Bug" | "Rat" | "Sparkles" | "Factory";
+  summary: string;
+  image: string; // Path or URL to rectangular photo
+  highlights: string[];
 }
 
-export const CDO_SERVICES: ServiceItem[] = [
+export const servicesData: ServiceItem[] = [
   {
-    id: "termite-preconstruction",
-    title: "Pre-Construction Soil Poisoning & Termite Management",
-    shortDesc: "Subterranean termite chemical barrier, concrete sub-slab drilling, soil poisoning, and post-construction treatments.",
-    badge: "Termite Defense Specialist",
-    popular: true,
-    warranty: "Up to 5 Years Written Warranty",
-    description:
-      "Cagayan de Oro's warm, humid climate creates aggressive breeding conditions for subterranean termites (Anay). We provide complete chemical soil barriers, perimeter trenching, slab pressure injection, and framing preservation to safeguard both new construction and existing properties.",
-    targetPests: [
-      "Subterranean Termites (Coptotermes vastator)",
-      "Drywood Termites (Bukbok)",
-      "Dampwood Termites",
-    ],
-    treatmentSteps: [
-      "Comprehensive structural moisture and termite entry acoustic survey",
-      "Perimeter soil trenching & sub-slab high-pressure chemical injection",
-      "Eco-safe wood framing preservation & timber injection",
-      "Colony-elimination monitoring stations & scheduled warranty audits",
-    ],
-    recommendedFor: "New home constructions, building renovations, timber-rich structures, commercial and residential foundations across CDO.",
-    iconName: "ShieldAlert",
+    id: "termite-control",
+    title: "Termite & Soil Treatment",
+    badge: "Most Requested",
+    summary: "Subterranean termite barriers and wood protection with long-term warranty.",
+    image: "/images/services/termites.jpg",
+    highlights: ["Pre/Post Construction", "Colony Elimination", "Written Warranty"],
   },
   {
-    id: "cockroach-ant-control",
-    title: "Cockroach & Ant Eradication",
-    shortDesc: "Pheromone gel baiting, micro-crack residual barrier spraying, kitchen-safe and pet-safe targeted misting.",
-    badge: "Kitchen & Pet Safe",
-    warranty: "30-Day Retreatment Guarantee",
-    description:
-      "Targeting stubborn German cockroaches, American cockroaches, and pervasive black ant colonies. We deploy Integrated Pest Management (IPM) that attacks harborage areas behind appliances, cabinetry, and conduit voids without contaminating food prep areas.",
-    targetPests: [
-      "German Cockroaches (Ipis)",
-      "American Cockroaches",
-      "Black House & Ghost Ants",
-      "Silverfish & Spiders",
-    ],
-    treatmentSteps: [
-      "Precision pheromone gel baiting in electronics & prep counters",
-      "Odorless residual barrier spraying along baseboards & utility entries",
-      "Insect growth regulators (IGRs) to halt reproduction cycles",
-      "Preventive sanitation consultation & entry sealing guidance",
-    ],
-    recommendedFor: "Homes, restaurants, cloud kitchens, fast food branches in CDO malls, supermarkets, and bakery facilities.",
-    iconName: "Bug",
+    id: "cockroach-ants",
+    title: "Cockroach & Ant Control",
+    badge: "Residential & Food Service",
+    summary: "Odorless kitchen-safe gel baiting and residual perimeter misting.",
+    image: "/images/services/cockroaches.jpg",
+    highlights: ["Odorless Gel Baiting", "Zero-Downtime Safe", "Kitchen & Pantry Focus"],
   },
   {
     id: "rodent-abatement",
-    title: "Rodent Abatement & Exclusion Control",
-    shortDesc: "Strategic tamper-proof baiting stations, sanitary trapping, and crawlspace exclusion for houses and warehouses.",
-    badge: "Zero-Odor Captures",
-    warranty: "Guaranteed Population Collapse",
-    description:
-      "Rats chew through structural wiring, contaminate stored food, and spread leptospirosis. We install secured tamper-resistant bait stations, sanitary attic traps, and identify roof-line entry holes to completely seal your property.",
-    targetPests: [
-      "Norway Sewer Rats (Daga)",
-      "Roof Rats (Black Rats)",
-      "House Mice (Mus musculus)",
-    ],
-    treatmentSteps: [
-      "Thorough roof eaves, ceiling cavities, and perimeter inspection",
-      "Deployment of key-lockable tamper-resistant bait stations",
-      "Attic and warehouse mechanical trapping systems",
-      "Mesh proofing of plumbing and electrical penetration gaps",
-    ],
-    recommendedFor: "Warehouses in Bugo/Lapasan, grain storage, grocery stores, food processing plants, and residential houses.",
-    iconName: "Rat",
+    title: "Rodent & Rat Abatement",
+    badge: "Sanitation Defense",
+    summary: "Targeted exclusion, tamper-proof bait stations, and entry-point sealing.",
+    image: "/images/services/rodents.jpg",
+    highlights: ["Tamper-Proof Stations", "Entry Sealing", "Warehouses & Homes"],
   },
   {
-    id: "mosquito-general-pest",
-    title: "Mosquito & General Pest Control",
-    shortDesc: "Spatial outdoor thermal fogging, electric ULV cold misting, eco-friendly larvicide, and seasonal misting.",
-    badge: "Dengue Reduction",
-    warranty: "Rapid Knockdown Formula",
-    description:
-      "Shield your family, customers, and staff from seasonal Dengue outbreaks in Northern Mindanao. We deploy Ultra-Low Volume (ULV) cold misting and thermal outdoor foggers to disperse fine droplets that neutralize adult Aedes mosquitoes in garden foliage, ditches, and resting sites.",
-    targetPests: [
-      "Aedes Aegypti (Dengue Mosquitoes)",
-      "Culex Mosquitoes",
-      "Flies & Gnats",
-      "Seasonal Flying Pests",
-    ],
-    treatmentSteps: [
-      "Thermal perimeter fogging along perimeter ditches & shrubbery",
-      "Electric ULV cold misting with non-staining botanical/pyrethroid compounds",
-      "Application of eco-friendly biological larvicides in standing water",
-      "Indoor perimeter barrier application for long-lasting insect protection",
-    ],
-    recommendedFor: "Subdivision compounds, schools, clinics, outdoor dining venues, resorts, and garden properties.",
-    iconName: "Sparkles",
+    id: "mosquito-fogging",
+    title: "Mosquito & Outdoor Fogging",
+    badge: "Seasonal Protection",
+    summary: "Thermal fogging, misting, and larvicide for outdoor and commercial grounds.",
+    image: "/images/services/mosquitoes.jpg",
+    highlights: ["Thermal Fogging", "Dengue Prevention", "Compounds & Yards"],
   },
   {
-    id: "commercial-factory-contracts",
-    title: "Commercial & Factory Maintenance Contracts",
-    shortDesc: "Sanitation and pest compliance maintenance with complete regulatory documentation for food businesses and industrial plants.",
-    badge: "HACCP & FDA Compliant",
-    warranty: "Scheduled Monthly Audits",
-    description:
-      "Custom tailored pest maintenance programs meeting the strict sanitation requirements of city health inspectors, FDA regulations, and corporate standards. Includes scheduled visits, detailed logbooks, and sanitary audit documentation.",
-    targetPests: [
-      "Cockroaches, Rodents, Flies & Stored Product Pests",
-      "Crawling & Flying Invertebrates",
-      "Warehouse Structural Pests",
-    ],
-    treatmentSteps: [
-      "Comprehensive baseline facility inspection and risk classification",
-      "Regular scheduled bait rotation, barrier sprays & misting protocols",
-      "Detailed trend logbooks and sanitary inspection certificates",
-      "Staff pest-proofing advice and emergency response on demand",
-    ],
-    recommendedFor: "Factories in PHIVIDEC/Tagoloan, manufacturing plants in Puerto/Bugo, hotels, supermarkets, and corporate facilities.",
-    iconName: "Factory",
+    id: "commercial-contracts",
+    title: "Commercial & Factory Maintenance",
+    badge: "HACCP & Sanitation Ready",
+    summary: "Scheduled pest sanitation for restaurants, factories, and offices.",
+    image: "/images/services/commercial.jpg",
+    highlights: ["Compliance Certificates", "Scheduled Visits", "Detailed Logbooks"],
   },
 ];
+
+// Alias for backwards compatibility
+export const CDO_SERVICES = servicesData;
 
 export const SERVICE_AREAS = [
   {

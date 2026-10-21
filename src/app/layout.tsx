@@ -187,7 +187,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-neutral-950 text-slate-100 pb-16 sm:pb-0">
+      <body className="min-h-screen flex flex-col font-sans bg-slate-50 text-neutral-900 antialiased pb-16 sm:pb-0">
         {children}
       </body>
     </html>

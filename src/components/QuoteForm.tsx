@@ -115,9 +115,9 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
   };
 
   return (
-    <section id="quote" className="py-20 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white relative overflow-hidden">
+    <section id="quote" className="py-20 bg-neutral-950 text-white relative overflow-hidden">
       {/* Background patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(#dc2626_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(220,38,38,0.15)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -182,22 +182,22 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
             </div>
           </div>
 
-          {/* Right Form Card */}
+          {/* Right Form Card - High-Contrast Pure White Card */}
           <div className="lg:col-span-7">
-            <div className="bg-neutral-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-neutral-800">
+            <div className="bg-white text-neutral-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200">
               {successData ? (
                 <div className="py-8 text-center space-y-5 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-full bg-red-500/10 text-red-500 border border-red-500/30 flex items-center justify-center mx-auto ring-8 ring-red-950/50">
+                  <div className="w-16 h-16 rounded-full bg-red-50 text-red-600 border border-red-200 flex items-center justify-center mx-auto ring-8 ring-red-50">
                     <CheckCircle className="w-10 h-10" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-white">
+                    <h3 className="text-2xl font-black text-neutral-950">
                       Inquiry Received Successfully!
                     </h3>
-                    <p className="text-sm font-medium text-red-400 mt-1">
+                    <p className="text-sm font-medium text-red-700 mt-1">
                       Reference ID: <span className="font-mono font-bold">{successData.inquiryId}</span>
                     </p>
-                    <p className="text-sm text-slate-300 mt-3 max-w-md mx-auto leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-3 max-w-md mx-auto leading-relaxed">
                       {successData.message}
                     </p>
                   </div>
@@ -205,7 +205,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                   <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href={CDO_CONTACT.phoneTel}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-500 transition-colors shadow-md shadow-red-950/60"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 transition-colors shadow-sm"
                     >
                       <Phone className="w-4 h-4" />
                       Call Hotline Now
@@ -213,7 +213,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                     <button
                       type="button"
                       onClick={resetForm}
-                      className="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-neutral-800 border border-neutral-700 transition-colors"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-neutral-800 hover:bg-slate-100 border border-slate-200 transition-colors"
                     >
                       Submit Another Request
                     </button>
@@ -221,25 +221,25 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="border-b border-neutral-800 pb-4">
-                    <h3 className="text-xl sm:text-2xl font-black text-white">
+                  <div className="border-b border-slate-100 pb-4">
+                    <h3 className="text-xl sm:text-2xl font-black text-neutral-950">
                       Get Your Free Inspection Quote
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                    <p className="text-xs sm:text-sm text-slate-500 mt-1">
                       Fill out this 1-minute form for instant prioritization.
                     </p>
                   </div>
 
                   {errors.form && (
-                    <div className="p-3.5 rounded-xl bg-red-950/50 border border-red-800/80 flex items-center gap-2 text-red-300 text-xs sm:text-sm">
-                      <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-400" />
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2 text-red-700 text-xs sm:text-sm">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0" />
                       <span>{errors.form}</span>
                     </div>
                   )}
 
                   {/* Property Type Radio Selector */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Property Type <span className="text-red-500">*</span>
                     </label>
                     <div className="grid grid-cols-3 gap-2.5">
@@ -257,11 +257,11 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                             onClick={() => setPropertyType(item.id as any)}
                             className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${
                               isSelected
-                                ? "border-red-600 bg-red-600/15 text-white font-bold ring-2 ring-red-500/30"
-                                : "border-neutral-800 bg-neutral-950 hover:bg-neutral-800 text-slate-300"
+                                ? "border-red-600 bg-red-50 text-neutral-950 font-bold ring-2 ring-red-500/20"
+                                : "border-slate-200 hover:bg-slate-50 text-slate-700 bg-white"
                             }`}
                           >
-                            <Icon className={`w-5 h-5 mb-1 ${isSelected ? "text-red-500" : "text-neutral-500"}`} />
+                            <Icon className={`w-5 h-5 mb-1 ${isSelected ? "text-red-600" : "text-slate-400"}`} />
                             <span className="text-xs">{item.label}</span>
                           </button>
                         );
@@ -272,7 +272,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                   {/* Full Name & Phone Number */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5" htmlFor="fullName">
+                      <label className="block text-xs font-bold text-neutral-800 mb-1.5" htmlFor="fullName">
                         Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -282,19 +282,19 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="e.g. Juan dela Cruz"
-                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-neutral-950 text-slate-100 placeholder:text-neutral-500 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-neutral-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
                           errors.fullName
-                            ? "border-red-500 focus:ring-red-500/40 bg-red-950/20"
-                            : "border-neutral-700 focus:border-red-500 focus:ring-red-500/30"
+                            ? "border-red-400 focus:ring-red-400 bg-red-50/30"
+                            : "border-slate-200 focus:border-red-600 focus:ring-red-500/20"
                         }`}
                       />
                       {errors.fullName && (
-                        <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>
+                        <p className="text-red-600 text-xs mt-1">{errors.fullName}</p>
                       )}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5" htmlFor="phone">
+                      <label className="block text-xs font-bold text-neutral-800 mb-1.5" htmlFor="phone">
                         Phone Number (PH) <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -304,14 +304,14 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="0917 123 4567"
-                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-neutral-950 text-slate-100 placeholder:text-neutral-500 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-neutral-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
                           errors.phone
-                            ? "border-red-500 focus:ring-red-500/40 bg-red-950/20"
-                            : "border-neutral-700 focus:border-red-500 focus:ring-red-500/30"
+                            ? "border-red-400 focus:ring-red-400 bg-red-50/30"
+                            : "border-slate-200 focus:border-red-600 focus:ring-red-500/20"
                         }`}
                       />
                       {errors.phone && (
-                        <p className="text-red-400 text-xs mt-1">{errors.phone}</p>
+                        <p className="text-red-600 text-xs mt-1">{errors.phone}</p>
                       )}
                     </div>
                   </div>
@@ -319,14 +319,14 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                   {/* Pest Problem & Barangay */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5" htmlFor="pestProblem">
+                      <label className="block text-xs font-bold text-neutral-800 mb-1.5" htmlFor="pestProblem">
                         Primary Pest Concern <span className="text-red-500">*</span>
                       </label>
                       <select
                         id="pestProblem"
                         value={pestProblem}
                         onChange={(e) => setPestProblem(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl text-sm border border-neutral-700 bg-neutral-950 text-slate-100 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/30"
+                        className="w-full px-4 py-2.5 rounded-xl text-sm border border-slate-200 bg-white text-neutral-900 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                       >
                         <option value="Termite (Anay) Soil / Wood Treatment">Subterranean Termites (Anay)</option>
                         <option value="Cockroach (Ipis) Gel Baiting & Spray">German / American Cockroaches (Ipis)</option>
@@ -339,7 +339,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5" htmlFor="barangayAddress">
+                      <label className="block text-xs font-bold text-neutral-800 mb-1.5" htmlFor="barangayAddress">
                         CDO Barangay / Location <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -349,21 +349,21 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                         value={barangayAddress}
                         onChange={(e) => setBarangayAddress(e.target.value)}
                         placeholder="e.g. Uptown Carmen, Pueblo, Nazareth"
-                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-neutral-950 text-slate-100 placeholder:text-neutral-500 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-neutral-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
                           errors.barangayAddress
-                            ? "border-red-500 focus:ring-red-500/40 bg-red-950/20"
-                            : "border-neutral-700 focus:border-red-500 focus:ring-red-500/30"
+                            ? "border-red-400 focus:ring-red-400 bg-red-50/30"
+                            : "border-slate-200 focus:border-red-600 focus:ring-red-500/20"
                         }`}
                       />
                       {errors.barangayAddress && (
-                        <p className="text-red-400 text-xs mt-1">{errors.barangayAddress}</p>
+                        <p className="text-red-600 text-xs mt-1">{errors.barangayAddress}</p>
                       )}
                     </div>
                   </div>
 
                   {/* Urgency Selection */}
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                    <label className="block text-xs font-bold text-neutral-800 mb-1.5">
                       How urgently do you need inspection?
                     </label>
                     <div className="grid grid-cols-3 gap-2.5 text-xs font-medium">
@@ -378,8 +378,8 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                           onClick={() => setUrgency(item.id as any)}
                           className={`py-2 px-3 rounded-lg border text-center transition-all ${
                             urgency === item.id
-                              ? "border-red-600 bg-red-600/15 text-red-300 font-bold"
-                              : "border-neutral-800 bg-neutral-950 hover:bg-neutral-800 text-slate-400"
+                              ? "border-red-600 bg-red-50 text-red-700 font-bold"
+                              : "border-slate-200 hover:bg-slate-50 text-slate-700 bg-white"
                           }`}
                         >
                           {item.label}
@@ -390,7 +390,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
 
                   {/* Notes / Special Instructions */}
                   <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-1.5" htmlFor="notes">
+                    <label className="block text-xs font-bold text-neutral-800 mb-1.5" htmlFor="notes">
                       Additional Details (Optional)
                     </label>
                     <textarea
@@ -399,7 +399,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="e.g. Mud tubes noticed behind wooden cabinets; restaurant kitchen inspection required."
-                      className="w-full px-4 py-2 rounded-xl text-sm border border-neutral-700 bg-neutral-950 text-slate-100 placeholder:text-neutral-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/30"
+                      className="w-full px-4 py-2 rounded-xl text-sm border border-slate-200 bg-white text-neutral-900 placeholder:text-slate-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                     />
                   </div>
 
@@ -407,7 +407,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-base font-bold text-white bg-red-600 hover:bg-red-500 active:bg-red-700 shadow-md shadow-red-950/60 hover:shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-base font-bold text-white bg-red-600 hover:bg-red-700 active:bg-red-800 shadow-md hover:shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <>
@@ -422,7 +422,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                     )}
                   </button>
 
-                  <p className="text-center text-[11px] text-slate-400">
+                  <p className="text-center text-[11px] text-slate-500">
                     🔒 Your information is confidential. We will never share your contact details.
                   </p>
                 </form>

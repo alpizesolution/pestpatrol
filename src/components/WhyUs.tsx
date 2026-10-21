@@ -42,17 +42,17 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="py-20 bg-neutral-900 border-b border-neutral-800">
+    <section id="why-us" className="py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider mb-3">
             Why Cagayan de Oro Trusts Us
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
             Professional Standards You Can Count On
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             Eliminating pests doesn&apos;t require compromising family health or business operations. We combine modern entomological science with strict safety protocols.
           </p>
         </div>
@@ -62,16 +62,16 @@ export default function WhyUs() {
           {TRUST_POINTS.map((point, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-red-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-300 hover:bg-red-50/20 transition-all flex flex-col justify-between"
             >
               <div>
-                <span className="inline-block text-xs font-bold text-red-400 bg-red-500/10 border border-red-500/20 px-2.5 py-1 rounded-md mb-4">
+                <span className="inline-block text-xs font-bold text-red-700 bg-red-100 border border-red-200 px-2.5 py-1 rounded-md mb-4">
                   {point.highlight}
                 </span>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-neutral-950 mb-2">
                   {point.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {point.desc}
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function WhyUs() {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-black text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-neutral-800 overflow-hidden relative">
+        <div className="bg-neutral-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-neutral-800 overflow-hidden relative">
           <div className="relative z-10">
             <div className="text-center sm:text-left max-w-2xl mb-8">
               <span className="text-xs font-bold uppercase tracking-wider text-red-500">

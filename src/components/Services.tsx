@@ -18,30 +18,30 @@ export default function Services({ onSelectService }: ServicesProps) {
   const getIcon = (iconName: ServiceItem["iconName"]) => {
     switch (iconName) {
       case "ShieldAlert":
-        return <ShieldAlert className="w-7 h-7 text-red-500" />;
+        return <ShieldAlert className="w-7 h-7 text-red-600" />;
       case "Bug":
-        return <Bug className="w-7 h-7 text-red-500" />;
+        return <Bug className="w-7 h-7 text-red-600" />;
       case "Rat":
-        return <Rat className="w-7 h-7 text-red-500" />;
+        return <Rat className="w-7 h-7 text-red-600" />;
       case "Sparkles":
-        return <Sparkles className="w-7 h-7 text-red-500" />;
+        return <Sparkles className="w-7 h-7 text-red-600" />;
       default:
-        return <Shield className="w-7 h-7 text-red-500" />;
+        return <Shield className="w-7 h-7 text-red-600" />;
     }
   };
 
   return (
-    <section id="services" className="py-20 bg-neutral-950 border-b border-neutral-800 relative">
+    <section id="services" className="py-20 bg-slate-50 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wider mb-3">
             Targeted Treatments
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-950 tracking-tight">
             Specialized Pest & Termite Services in CDO
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             Tailored specifically for the coastal and upland climates of Northern Mindanao. Every treatment complies with FDA safety standards and is backed by a written service warranty.
           </p>
         </div>
@@ -51,33 +51,33 @@ export default function Services({ onSelectService }: ServicesProps) {
           {CDO_SERVICES.map((service) => (
             <div
               key={service.id}
-              className={`bg-neutral-900 rounded-2xl border transition-all duration-200 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-red-950/40 hover:-translate-y-1 ${
+              className={`bg-white rounded-2xl border transition-all duration-200 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 ${
                 service.popular
-                  ? "border-red-600/70 ring-1 ring-red-500/30"
-                  : "border-neutral-800 hover:border-red-500/40"
+                  ? "border-red-500 ring-2 ring-red-500/20"
+                  : "border-slate-200 hover:border-red-300"
               }`}
             >
               {/* Card Header & Badge */}
               <div className="p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="p-3 rounded-xl bg-neutral-950 border border-neutral-800">
+                  <div className="p-3 rounded-xl bg-red-50 border border-red-100">
                     {getIcon(service.iconName)}
                   </div>
                   <div className="flex flex-col items-end gap-1">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-500/10 border border-red-500/30 text-red-300">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-200">
                       {service.badge}
                     </span>
-                    <span className="text-xs font-semibold text-red-400 flex items-center gap-1">
+                    <span className="text-xs font-semibold text-red-600 flex items-center gap-1">
                       <Shield className="w-3.5 h-3.5" />
                       {service.warranty}
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-neutral-950 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -90,7 +90,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                     {service.targetPests.map((pest) => (
                       <span
                         key={pest}
-                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-neutral-950 border border-neutral-800 text-slate-300"
+                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
                       >
                         {pest}
                       </span>
@@ -105,8 +105,8 @@ export default function Services({ onSelectService }: ServicesProps) {
                   </h4>
                   <ul className="space-y-2">
                     {service.treatmentSteps.map((step, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
                         <span>{step}</span>
                       </li>
                     ))}
@@ -114,21 +114,21 @@ export default function Services({ onSelectService }: ServicesProps) {
                 </div>
 
                 {/* Recommended For */}
-                <div className="bg-neutral-950/70 rounded-xl p-3.5 border border-neutral-800 text-xs text-slate-400">
-                  <span className="font-semibold text-slate-200">Recommended for: </span>
+                <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200 text-xs text-slate-600">
+                  <span className="font-semibold text-neutral-900">Recommended for: </span>
                   {service.recommendedFor}
                 </div>
               </div>
 
               {/* Action Footer */}
-              <div className="px-6 py-4 sm:px-8 bg-neutral-950 border-t border-neutral-800 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-medium">
+              <div className="px-6 py-4 sm:px-8 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-xs text-slate-500 font-medium">
                   Free Initial Site Assessment
                 </span>
                 <a
                   href="#quote"
                   onClick={() => onSelectService && onSelectService(service.title)}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-red-400 hover:text-red-300 group"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-red-600 hover:text-red-700 group"
                 >
                   <span>Book Free Inspection</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const cleanedPhone = (body.phone || "").replace(/[\s\-\(\)]/g, "");
     const phPhoneRegex = /^(09|\+639)\d{9}$/;
     if (!cleanedPhone || !phPhoneRegex.test(cleanedPhone)) {
-      errors.phone = "Please enter a valid PH mobile number (e.g. 0917 123 4567).";
+      errors.phone = "Please enter a valid PH mobile number (e.g. 0916 304 1351).";
     }
 
     if (!body.propertyType || !["residential", "commercial", "industrial"].includes(body.propertyType)) {

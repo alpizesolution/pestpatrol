@@ -4,7 +4,9 @@ Modern, high-converting, mobile-responsive local business website for **Pest Pat
 
 - **Facebook**: [facebook.com/PestPatrolCDO](https://www.facebook.com/PestPatrolCDO)
 - **Messenger**: [m.me/PestPatrolCDO](https://m.me/PestPatrolCDO)
-- **Hotline**: 0917-824-7378 / (088) 850-7378
+- **Primary Hotline**: +63 916 304 1351 (0916 304 1351)
+- **Secondary Hotline**: 0926 669 4734
+- **Coverage**: 🔰 Serving the Whole of CDO and Northern Mindanao 🔰
 
 ---
 

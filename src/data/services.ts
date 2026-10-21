@@ -146,35 +146,53 @@ export const SERVICE_AREAS = [
 
 export const TRUST_POINTS = [
   {
-    title: "FDA & FPA Approved Chemicals",
-    desc: "We exclusively utilize safe, odorless, low-toxicity chemicals certified by the Philippine Food and Drug Administration (FDA) and Fertilizer & Pesticide Authority (FPA). Safe for children and pets.",
-    highlight: "100% Certified Safe",
+    title: "Safe & Effective Treatments",
+    desc: "We exclusively utilize safe, low-odor, low-toxicity chemicals certified by the FDA and FPA. Safe for homes with children and pets.",
+    highlight: "Safe & Effective",
   },
   {
-    title: "Certified Professional Technicians",
-    desc: "Our applicators undergo rigorous certified training in Integrated Pest Management (IPM), safety compliance, and subterranean biology.",
-    highlight: "Licensed Applicators",
+    title: "Affordable Rates & Free Quotes",
+    desc: "Transparent and honest pricing tailored to CDO properties with zero hidden charges and free on-site inspections.",
+    highlight: "Affordable Rates",
   },
   {
-    title: "Service Warranty Guaranteed",
-    desc: "Long-term peace of mind. We stand by our work with written warranty certificates—up to 5 years for termite soil barrier treatments.",
-    highlight: "Written Guarantee",
+    title: "Fast Response CDO Mobilization",
+    desc: "Strategic local CDO technicians ready for same-day dispatch and rapid emergency response across all barangays.",
+    highlight: "Fast Response",
   },
   {
-    title: "Rapid Emergency Response",
-    desc: "Based locally in CDO. We offer same-day or next-day on-site structural inspections across all barangays and commercial zones.",
-    highlight: "Same-Day Inspection",
+    title: "Proven Results & Warranty",
+    desc: "Long-term peace of mind with guaranteed population collapse and written service warranty certificates.",
+    highlight: "Proven Results",
   },
 ];
 
 export const CDO_CONTACT = {
   name: "Pest Patrol CDO",
-  phoneDisplay: "0917-824-7378 / (088) 850-7378",
-  phoneRaw: "+639178247378",
-  phoneTel: "tel:+639178247378",
+  phonePrimary: "+63 916 304 1351",
+  phoneSecondary: "0926 669 4734",
+  phoneDisplay: "+63 916 304 1351 / 0926 669 4734",
+  phoneRaw: "+639163041351",
+  phoneTel: "tel:+639163041351",
+  phoneSecondaryTel: "tel:+639266694734",
   messengerUrl: "https://m.me/PestPatrolCDO",
   facebookUrl: "https://www.facebook.com/PestPatrolCDO",
   email: "inquiries@pestpatrolcdo.ph",
+  tagline: "Serving the Whole of CDO and Northern Mindanao",
   address: "Rodolfo N. Pelaez Blvd, Kauswagan / Upper Carmen, Cagayan de Oro City, 9000 Misamis Oriental",
   hours: "Monday – Saturday: 7:30 AM – 6:30 PM | 24/7 Emergency Response",
+  weService: [
+    { title: "Homes", icon: "🏠" },
+    { title: "Commercial Establishments", icon: "🏢" },
+    { title: "Factories & Warehouses", icon: "🏭" },
+    { title: "Pre-Construction Soil Poisoning", icon: "🏗️" },
+  ],
+  targetPestsHeadline: "Cockroaches • Termites • Rodents • Ants • Mosquitoes",
+  valuePoints: [
+    "Safe & Effective",
+    "Affordable Rates",
+    "Fast Response",
+    "Proven Results",
+  ],
+  ctaMessage: "Send us a message to schedule your free inspection and quotation",
 };

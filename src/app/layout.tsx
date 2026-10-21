@@ -76,7 +76,7 @@ export default function RootLayout({
     image: "https://pestpatrolcdo.ph/logo.png",
     "@id": "https://pestpatrolcdo.ph",
     url: "https://pestpatrolcdo.ph",
-    telephone: "+639178247378",
+    telephone: "+639163041351",
     priceRange: "₱₱",
     address: {
       "@type": "PostalAddress",

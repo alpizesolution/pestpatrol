@@ -12,7 +12,7 @@ export default function FloatingCTA() {
           className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl font-bold text-xs text-white bg-neutral-950 active:bg-black shadow-sm"
         >
           <Phone className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-          <span>Call Hotline</span>
+          <span>Call 0916 304 1351</span>
         </a>
 
         {/* Facebook Messenger Button - Bold Red */}

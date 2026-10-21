@@ -50,7 +50,7 @@ export default function Navbar() {
               className="flex items-center gap-1 font-semibold text-red-400 hover:text-white transition-colors"
             >
               <Phone className="w-3.5 h-3.5 fill-current" />
-              <span>Hotline: 0917-824-7378</span>
+              <span>Hotline: {CDO_CONTACT.phoneDisplay}</span>
             </a>
           </div>
         </div>
@@ -166,7 +166,14 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-base font-bold text-white bg-red-600 hover:bg-red-700 shadow-md"
               >
                 <Phone className="w-5 h-5 fill-current" />
-                Call Hotline: 0917-824-7378
+                Call Hotline: {CDO_CONTACT.phonePrimary}
+              </a>
+              <a
+                href={CDO_CONTACT.phoneSecondaryTel}
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-bold text-neutral-900 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300"
+              >
+                <Phone className="w-4 h-4 text-red-600 fill-current" />
+                Secondary: {CDO_CONTACT.phoneSecondary}
               </a>
 
               <a

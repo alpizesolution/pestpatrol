@@ -45,7 +45,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
     const cleanPhone = phone.replace(/[\s\-\(\)]/g, "");
     const phPhoneRegex = /^(09|\+639)\d{9}$/;
     if (!cleanPhone || !phPhoneRegex.test(cleanPhone)) {
-      newErrors.phone = "Enter a valid Philippine mobile number (e.g., 0917 123 4567).";
+      newErrors.phone = "Enter a valid Philippine mobile number (e.g., 0916 304 1351).";
     }
 
     if (!barangayAddress.trim() || barangayAddress.trim().length < 3) {
@@ -160,25 +160,37 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
 
             {/* Direct Contact Cards */}
             <div className="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-5 space-y-3">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Need Immediate Emergency Action?</span>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                Need Immediate Emergency Action?
+              </span>
+              <p className="text-xs text-slate-300">
+                Send us a message to schedule your free inspection and quotation, or call directly:
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2.5">
                 <a
                   href={CDO_CONTACT.phoneTel}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-white bg-red-600 hover:bg-red-500 shadow-md shadow-red-950/60 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-red-600 hover:bg-red-500 shadow-md shadow-red-950/60 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Call: 0917-824-7378
+                  <span>Call {CDO_CONTACT.phonePrimary}</span>
                 </a>
                 <a
-                  href={CDO_CONTACT.messengerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-200 bg-neutral-950 hover:bg-neutral-800 border border-neutral-700 transition-colors"
+                  href={CDO_CONTACT.phoneSecondaryTel}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4 text-red-500" />
-                  Messenger CDO
+                  <Phone className="w-4 h-4 text-red-500" />
+                  <span>Call {CDO_CONTACT.phoneSecondary}</span>
                 </a>
               </div>
+              <a
+                href={CDO_CONTACT.messengerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-200 bg-neutral-950 hover:bg-neutral-800 border border-neutral-700 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4 text-red-500" />
+                <span>Message on Facebook to Schedule</span>
+              </a>
             </div>
           </div>
 
@@ -303,7 +315,7 @@ export default function QuoteForm({ initialPestProblem = "" }: QuoteFormProps) {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="0917 123 4567"
+                        placeholder="e.g. 0916 304 1351"
                         className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-neutral-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
                           errors.phone
                             ? "border-red-400 focus:ring-red-400 bg-red-50/30"

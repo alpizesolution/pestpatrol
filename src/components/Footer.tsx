@@ -35,8 +35,11 @@ export default function Footer() {
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Cagayan de Oro&apos;s specialized pest and termite control service. Delivering FDA-compliant treatments, subterranean soil barriers, and hospital-grade misting throughout Northern Mindanao.
+            <p className="text-xs sm:text-sm text-slate-300 font-medium">
+              🔰 Serving the Whole of CDO and Northern Mindanao 🔰
+            </p>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              We service Homes, Commercial Establishments, Factories & Warehouses, and Pre-Construction Soil Poisoning. Safe & effective control for Cockroaches, Termites, Rodents, Ants, and Mosquitoes.
             </p>
 
             <div className="pt-2">
@@ -123,14 +126,24 @@ export default function Footer() {
                 <span>{CDO_CONTACT.hours}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-red-500 flex-shrink-0" />
-                <a
-                  href={CDO_CONTACT.phoneTel}
-                  className="font-bold text-white hover:text-red-400 transition-colors"
-                >
-                  {CDO_CONTACT.phoneDisplay}
-                </a>
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-2.5">
+                  <Phone className="w-4 h-4 text-red-500 flex-shrink-0" />
+                  <a
+                    href={CDO_CONTACT.phoneTel}
+                    className="font-bold text-white hover:text-red-400 transition-colors"
+                  >
+                    Primary: {CDO_CONTACT.phonePrimary}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5 pl-6">
+                  <a
+                    href={CDO_CONTACT.phoneSecondaryTel}
+                    className="font-semibold text-slate-300 hover:text-red-400 transition-colors"
+                  >
+                    Secondary: {CDO_CONTACT.phoneSecondary}
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">

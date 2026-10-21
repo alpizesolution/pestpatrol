@@ -1,12 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { servicesData, ServiceItem } from "@/data/services";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 interface ServicesProps {
   onSelectService?: (serviceTitle: string) => void;
+}
+
+function ServiceCardImage({
+  src,
+  fallbackSrc,
+  alt,
+}: {
+  src: string;
+  fallbackSrc?: string;
+  alt: string;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+
+  return (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      className="object-cover group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+      onError={() => {
+        if (fallbackSrc && imgSrc !== fallbackSrc) {
+          setImgSrc(fallbackSrc);
+        }
+      }}
+    />
+  );
 }
 
 export default function Services({ onSelectService }: ServicesProps) {
@@ -40,16 +68,13 @@ export default function Services({ onSelectService }: ServicesProps) {
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-red-500/40 transition duration-300 flex flex-col transform hover:-translate-y-1"
             >
               {/* Rectangular Image Container (16:9 ratio) */}
-              <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
-                <Image
+              <div className="relative w-full aspect-video overflow-hidden bg-neutral-100 rounded-t-2xl">
+                <ServiceCardImage
                   src={service.image}
+                  fallbackSrc={service.fallbackImage}
                   alt={`${service.title} in Cagayan de Oro - Pest Patrol CDO`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
                 />
-                <span className="absolute top-3 left-3 text-xs font-bold px-2.5 py-1 bg-black/80 backdrop-blur-md text-white rounded-md border border-white/10 shadow-sm">
+                <span className="absolute top-3 left-3 bg-[#174D38] text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
                   {service.badge}
                 </span>
               </div>
@@ -73,7 +98,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                         key={idx}
                         className="flex items-center gap-2 text-xs font-semibold text-slate-700"
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#174D38] shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -82,7 +107,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                   <a
                     href="#quote"
                     onClick={() => handleInquire(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-red-600 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition-colors"
                   >
                     <span>Inquire about this service</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

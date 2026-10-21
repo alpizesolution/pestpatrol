@@ -1,9 +1,12 @@
+const R2_BASE_URL = process.env.NEXT_PUBLIC_R2_URL || "https://media.pestpatrolcdo.com";
+
 export interface ServiceItem {
   id: string;
   title: string;
   badge: string;
   summary: string;
   image: string; // Path or URL to rectangular photo
+  fallbackImage?: string;
   highlights: string[];
 }
 
@@ -13,39 +16,44 @@ export const servicesData: ServiceItem[] = [
     title: "Termite & Soil Treatment",
     badge: "Most Requested",
     summary: "Subterranean termite barriers and wood protection with long-term warranty.",
-    image: "/images/services/termites.jpg",
+    image: `${R2_BASE_URL}/pestpatrol/SERVICES/termite-soil-treatment.jpg`,
+    fallbackImage: "/pestpatrol/SERVICES/termite-soil-treatment.jpg",
     highlights: ["Pre/Post Construction", "Colony Elimination", "Written Warranty"],
   },
   {
     id: "cockroach-ants",
     title: "Cockroach & Ant Control",
-    badge: "Residential & Food Service",
+    badge: "Kitchen Safe",
     summary: "Odorless kitchen-safe gel baiting and residual perimeter misting.",
-    image: "/images/services/cockroaches.jpg",
+    image: `${R2_BASE_URL}/pestpatrol/SERVICES/cockroach-ant-control.jpg`,
+    fallbackImage: "/pestpatrol/SERVICES/cockroach-ant-control.jpg",
     highlights: ["Odorless Gel Baiting", "Zero-Downtime Safe", "Kitchen & Pantry Focus"],
   },
   {
     id: "rodent-abatement",
     title: "Rodent & Rat Abatement",
-    badge: "Sanitation Defense",
+    badge: "Sanitation Ready",
     summary: "Targeted exclusion, tamper-proof bait stations, and entry-point sealing.",
-    image: "/images/services/rodents.jpg",
+    image: `${R2_BASE_URL}/pestpatrol/SERVICES/rodent-rat-abatement.jpg`,
+    fallbackImage: "/pestpatrol/SERVICES/rodent-rat-abatement.jpg",
     highlights: ["Tamper-Proof Stations", "Entry Sealing", "Warehouses & Homes"],
   },
   {
     id: "mosquito-fogging",
-    title: "Mosquito & Outdoor Fogging",
+    title: "Mosquito & Fly Fogging",
     badge: "Seasonal Protection",
     summary: "Thermal fogging, misting, and larvicide for outdoor and commercial grounds.",
-    image: "/images/services/mosquitoes.jpg",
+    image: `${R2_BASE_URL}/pestpatrol/SERVICES/mosquito-outdoor-fogging.jpg`,
+    fallbackImage: "/pestpatrol/SERVICES/mosquito-outdoor-fogging.jpg",
     highlights: ["Thermal Fogging", "Dengue Prevention", "Compounds & Yards"],
   },
   {
     id: "commercial-contracts",
-    title: "Commercial & Factory Maintenance",
-    badge: "HACCP & Sanitation Ready",
+    title: "Commercial & Industrial IPM",
+    badge: "HACCP & Compliance",
     summary: "Scheduled pest sanitation for restaurants, factories, and offices.",
-    image: "/images/services/commercial.jpg",
+    image: `${R2_BASE_URL}/pestpatrol/SERVICES/commercial-factory-maintenance.jpg`,
+    fallbackImage: "/pestpatrol/SERVICES/commercial-factory-maintenance.jpg",
     highlights: ["Compliance Certificates", "Scheduled Visits", "Detailed Logbooks"],
   },
 ];

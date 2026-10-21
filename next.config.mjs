@@ -5,11 +5,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ac1a8b53019ffc552a431e9520a9fa2e.r2.cloudflarestorage.com",
+        hostname: "media.pestpatrolcdo.com",
       },
       {
         protocol: "https",
-        hostname: "*.r2.dev",
+        hostname: "**.r2.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "ac1a8b53019ffc552a431e9520a9fa2e.r2.cloudflarestorage.com",
       },
     ],
   },

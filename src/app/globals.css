@@ -7,6 +7,10 @@
     --brand-dark: #0a0a0a;
     --brand-primary: #dc2626;
     --brand-light: #fef2f2;
+    --bg-page: #e2e2e2;
+    --bg-surface: #d6d6d6;
+    --ink: #121212;
+    --brand-red: #7d0c14;
   }
 
   html {
@@ -17,6 +21,34 @@
   body {
     @apply bg-slate-50 text-neutral-900 antialiased selection:bg-red-600 selection:text-white;
   }
+}
+
+/* Taste-Skill Motion Layer for LP2 */
+@keyframes editorialReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-reveal {
+  animation: editorialReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.anim-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.anim-delay-3 {
+  animation-delay: 0.3s;
 }
 
 /* Custom scrollbar */

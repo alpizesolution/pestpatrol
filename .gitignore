@@ -32,3 +32,6 @@ next-env.d.ts
 # wrangler
 .wrangler/
 
+# taste-skill inspector artifacts
+.taste-skill/
+

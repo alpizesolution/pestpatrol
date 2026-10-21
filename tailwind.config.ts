@@ -9,6 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        paper: {
+          50: "#faf9f6",
+          100: "#f6f5f2",
+          200: "#eeece8",
+          300: "#e2dfd9",
+          400: "#cac6be",
+        },
+        ink: {
+          900: "#121212",
+          800: "#1e1e1e",
+          700: "#2d2d2d",
+          600: "#55524e",
+          500: "#787571",
+        },
         brand: {
           50: "#fef2f2",
           100: "#fee2e2",
@@ -24,7 +38,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["Erode", "Newsreader", "Georgia", "serif"],
+        heading: ["Erode", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans: ["var(--font-inter)", "-apple-system", "sans-serif"],
       },
     },
   },

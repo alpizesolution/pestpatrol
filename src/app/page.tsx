@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import ServiceAreas from "@/components/ServiceAreas";
+import CompanyGallery from "@/components/CompanyGallery";
 import QuoteForm from "@/components/QuoteForm";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
@@ -38,6 +39,9 @@ export default function HomePage() {
 
         {/* CDO Service Areas & Barangays */}
         <ServiceAreas />
+
+        {/* Real Field Work & Fleet Photo Gallery */}
+        <CompanyGallery />
 
         {/* Interactive Quote & Inspection Booking Form */}
         <QuoteForm initialPestProblem={selectedService} />

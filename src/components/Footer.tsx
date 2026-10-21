@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Shield,
   Phone,
@@ -20,8 +21,14 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md shadow-red-950/50">
-                <Shield className="w-6 h-6 stroke-[2.2]" />
+              <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md shadow-red-950/50 overflow-hidden relative">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Pest Patrol CDO Logo"
+                  width={40}
+                  height={40}
+                  className="object-cover"
+                />
               </div>
               <span className="text-xl font-black text-white tracking-tight">
                 PEST PATROL <span className="text-red-500">CDO</span>

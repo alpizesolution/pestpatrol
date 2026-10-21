@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Phone,
   Shield,
@@ -18,6 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "#services" },
     { label: "Why Choose Us", href: "#why-us" },
+    { label: "Field Gallery", href: "#gallery" },
     { label: "CDO Coverage", href: "#service-areas" },
     { label: "Free Inspection", href: "#quote" },
   ];
@@ -59,8 +61,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
-              <Shield className="w-7 h-7 text-white stroke-[2.2]" />
+            <div className="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform overflow-hidden relative">
+              <Image
+                src="/images/logo.jpg"
+                alt="Pest Patrol CDO Logo"
+                width={48}
+                height={48}
+                className="object-cover"
+                priority
+              />
             </div>
             <div>
               <div className="flex items-center gap-1.5">

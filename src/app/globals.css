@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --brand-dark: #064e3b;
-    --brand-primary: #059669;
-    --brand-light: #ecfdf5;
+    --brand-dark: #0a0a0a;
+    --brand-primary: #dc2626;
+    --brand-light: #fef2f2;
   }
 
   html {
@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-900;
+    @apply bg-neutral-950 text-slate-100 antialiased selection:bg-red-600 selection:text-white;
   }
 }
 
@@ -24,14 +24,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #171717;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #333333;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #525252;
 }
 
 /* Pulse animation utility */

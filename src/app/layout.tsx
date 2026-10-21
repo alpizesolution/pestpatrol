@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#064e3b",
+  themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -187,7 +187,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-slate-50 text-slate-900 pb-16 sm:pb-0">
+      <body className="min-h-screen flex flex-col font-sans bg-neutral-950 text-slate-100 pb-16 sm:pb-0">
         {children}
       </body>
     </html>

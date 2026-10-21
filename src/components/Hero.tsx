@@ -14,25 +14,25 @@ import { CDO_CONTACT } from "@/data/services";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-950 via-emerald-900 to-slate-900 text-white pt-10 pb-16 sm:pt-16 sm:pb-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-black via-neutral-950 to-neutral-900 text-white pt-10 pb-16 sm:pt-16 sm:pb-24 border-b border-neutral-800">
       {/* Decorative background grid and glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#dc2626_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-red-900/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Headline and CTAs */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold shadow-inner">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-red-500/30 text-red-400 text-xs sm:text-sm font-semibold shadow-inner">
+              <ShieldCheck className="w-4 h-4 text-red-500" />
               <span>FDA & FPA Approved Chemicals • Certified Technicians</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
-              Fast, Reliable <span className="text-emerald-400">Pest & Termite</span> Control in Cagayan de Oro
+              Fast, Reliable <span className="text-red-500">Pest & Termite</span> Control in Cagayan de Oro
             </h1>
 
             {/* Subheading */}
@@ -44,34 +44,34 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
               <a
                 href="#quote"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-white bg-red-600 hover:bg-red-500 shadow-lg shadow-red-950/60 hover:shadow-red-900/60 transition-all transform hover:-translate-y-0.5"
               >
-                <CalendarCheck className="w-5 h-5 text-emerald-950" />
+                <CalendarCheck className="w-5 h-5 text-white" />
                 <span>Request Free Inspection</span>
-                <ArrowRight className="w-4 h-4 text-emerald-950" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </a>
 
               <a
                 href={CDO_CONTACT.phoneTel}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-white bg-white/10 hover:bg-white/15 border border-white/20 hover:border-emerald-400 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-red-500 transition-all"
               >
-                <PhoneCall className="w-5 h-5 text-emerald-400 animate-bounce" />
+                <PhoneCall className="w-5 h-5 text-red-500 animate-bounce" />
                 <span>Call Hotline (0917)</span>
               </a>
             </div>
 
             {/* Quick check bullet highlights */}
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-300 border-t border-emerald-800/60">
+            <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-300 border-t border-neutral-800">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
                 <span>Up to 5-Year Termite Warranty</span>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
                 <span>Zero-Odor, Pet & Child Safe</span>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
                 <span>Same-Day Site Inspection</span>
               </div>
             </div>
@@ -79,17 +79,17 @@ export default function Hero() {
 
           {/* Right Column: Hero Card / CDO Trust Highlights */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-900/90 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md relative">
-              <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+            <div className="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md relative">
+              <div className="flex items-center justify-between pb-6 border-b border-neutral-800">
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-red-500">
                     Trusted CDO Applicator
                   </span>
                   <h2 className="text-xl font-bold text-white mt-1">
                     Emergency & Preventive Plans
                   </h2>
                 </div>
-                <div className="h-12 w-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                <div className="h-12 w-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-500">
                   <Award className="w-6 h-6" />
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function Hero() {
               {/* Key Features List */}
               <div className="py-5 space-y-4">
                 <div className="flex items-start gap-3.5">
-                  <div className="mt-1 p-1.5 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-400">
+                  <div className="mt-1 p-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-red-500">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
@@ -111,7 +111,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="mt-1 p-1.5 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-400">
+                  <div className="mt-1 p-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-red-500">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -125,7 +125,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="mt-1 p-1.5 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-400">
+                  <div className="mt-1 p-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-red-500">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
@@ -140,15 +140,15 @@ export default function Hero() {
               </div>
 
               {/* Direct Messenger Quick Action */}
-              <div className="pt-4 border-t border-slate-800">
+              <div className="pt-4 border-t border-neutral-800">
                 <a
                   href={CDO_CONTACT.messengerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-emerald-200 bg-emerald-900/60 hover:bg-emerald-900 border border-emerald-700/50 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-red-200 bg-neutral-950 hover:bg-neutral-800 border border-red-900/40 transition-colors"
                 >
                   <span>Chat with an Entomologist on Facebook</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-red-400" />
                 </a>
               </div>
             </div>
